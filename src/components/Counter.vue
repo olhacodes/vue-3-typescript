@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'; 
 import fetchCount from '../utils/fetchCount';
+import ControlBar from './ControlBar.vue';
 
 interface Props {
     limit: number;
@@ -32,6 +33,6 @@ function addCount(num:number) {
 <template>
 	<div>
     <h2>Count: {{ count }}</h2>
-    <button @click="addCount(1)">Add</button>
+   <ControlBar @add-count="addCount" @reset-count="count = 0"/>
   </div>
 </template>
