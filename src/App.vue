@@ -1,7 +1,9 @@
 <template>
 	<div>
     <h1>{{ appInfo.name }}</h1>
-    <h2>{{ appInfo.version }}</h2>
+    <h1>{{ appInfo.version }}</h1>
+    <h2>Count: {{ count }}</h2>
+    <button @click="addCount(1)">Add</button>
   </div>
 </template>
 
@@ -14,7 +16,8 @@ interface AppInfo {
   version: string;
 }
 
-const count = ref<number | null>(null);
+const count = ref<number | null>(0);
+
 const appInfo: AppInfo = reactive({
   name: 'Counter',
   version: '1.0.0',
@@ -25,4 +28,10 @@ onMounted(() => {
     count.value = initialCount;
   })
 })
+
+function addCount(num:number) {
+  if (count.value !== null) {
+    count.value += num;
+  }
+}
 </script>
