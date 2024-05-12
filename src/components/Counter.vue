@@ -7,7 +7,9 @@ interface Props {
     alertMessageOnLimit: string;
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+    alertMessageOnLimit: 'can not go any higher',
+});
 
 const count = ref<number | null>(0);
 

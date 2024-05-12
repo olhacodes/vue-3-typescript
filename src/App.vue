@@ -18,6 +18,6 @@ const appInfo: AppInfo = reactive({
 	<div>
     <h1>{{ appInfo.name }}</h1>
     <h1>{{ appInfo.version }}</h1>
-    <Counter :limit="10" :alert-message-on-limit="'can not go any higher'" />
+    <Counter :limit="10" />
   </div>
 </template>
